@@ -1,0 +1,24 @@
+{
+  "name": "diplomprojekt_website",
+  "version": "1.0.0",
+  "description": "A website for our diploma projekt with R+C / Gewista",
+  "homepage": "https://github.com/Swordpro3001/Diplomprojekt_Website#readme",
+  "bugs": {
+    "url": "https://github.com/Swordpro3001/Diplomprojekt_Website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swordpro3001/Diplomprojekt_Website.git"
+  },
+  "license": "MIT",
+  "author": "Franz Puerto",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "ng start"
+  },
+  "dependencies": {
+    "@angular/cli": "^20.2.2",
+    "ng": "^0.0.0"
+  }
+}
