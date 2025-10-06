@@ -11,6 +11,10 @@ jobs:
     name: Build Angular App
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+          working-directory: ./Diplomprojekt_Website
+
     steps:
       # 1️⃣ Repository auschecken
       - name: Checkout code
