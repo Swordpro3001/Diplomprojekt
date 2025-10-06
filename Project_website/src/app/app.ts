@@ -12,6 +12,8 @@ import { SwiperContainer } from 'swiper/element';
   styleUrl: './app.scss',
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
+
+
 export class App {
   protected readonly title = signal('Project_website');
 }
