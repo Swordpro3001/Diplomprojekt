@@ -13,7 +13,7 @@ jobs:
 
     defaults:
       run:
-          working-directory: ./Diplomprojekt_Website
+          working-directory: Diplomprojekt_Website
 
     steps:
       # 1️⃣ Repository auschecken
