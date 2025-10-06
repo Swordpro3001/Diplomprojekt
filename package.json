@@ -15,6 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "ng build && ng serve",
     "test": "ng start"
   },
   "dependencies": {
