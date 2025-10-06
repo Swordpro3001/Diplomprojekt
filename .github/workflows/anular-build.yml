@@ -40,9 +40,7 @@ jobs:
 
       # 5️⃣ Build der Angular-App
       - name: Build Angular app
-        run: |
-         cd Project_website
-         ng build --configuration production
+        run: ng build --configuration production
 
       # 6️⃣ (Optional) Tests ausführen
       - name: Run tests
