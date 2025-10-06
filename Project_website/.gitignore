@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+# Angular specific
+package-lock.json
+
 # IDEs and editors
 .idea/
 .project
