@@ -2,14 +2,21 @@
   <header class="header">
     <div class="container">
       <div class="header__inner">
-        <a routerLink="/" class="header__logo">
+        <a href="#slider" (click)="scrollToSection('#slider', $event)" class="header__logo">
           <img src="/assets/logo.png" alt="Project Logo" style="height: 5vh;" />
         </a>
-        <nav class="header__nav">
-          <a routerLink="/home" class="header__link">Home</a>
-          <a routerLink="/about" class="header__link">About</a>
-          <a routerLink="/services" class="header__link">Services</a>
-          <a routerLink="/contact" class="header__link">Contact</a>
+
+        <button class="header__hamburger" [class.active]="isMenuOpen" (click)="toggleMenu()" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="header__nav" [class.active]="isMenuOpen">
+          <a href="#slider" (click)="scrollToSection('#slider', $event)" class="header__link">Home</a>
+          <a href="#about" (click)="scrollToSection('#about', $event)" class="header__link">About</a>
+          <a href="#team" (click)="scrollToSection('#team', $event)" class="header__link">Team</a>
+          <a href="#footer" (click)="scrollToSection('#footer', $event)" class="header__link">Contact</a>
         </nav>
       </div>
     </div>

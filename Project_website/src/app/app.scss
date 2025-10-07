@@ -1,6 +1,11 @@
-.slider, .team, .about{
+.slider, .team{
   width: 100%;
   height: 100vh;
+}
+
+.about {
+  width: 100%;
+  height: auto;
 }
 
 .footer{

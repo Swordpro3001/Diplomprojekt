@@ -3,36 +3,29 @@
 
   </app-header>
 
-  <div class="slider">
+  <div class="slider" id="slider">
     <swiper-container
       class="mySwiper"
-      pagination='{"clickable": true, "dynamicBullets": true}'
+      init="false"
     >
       <swiper-slide>
-        <img src="assets/slider1.jpg" />
       </swiper-slide>
       <swiper-slide>
-        <img src="assets/slider2.jpg" />
       </swiper-slide>
       <swiper-slide>
-        <img src="assets/slider3.jpg" />
       </swiper-slide>
       <swiper-slide>
-        <img src="assets/slider4.jpg" />
       </swiper-slide>
       <swiper-slide>
-        <img src="assets/slider5.jpg" />
       </swiper-slide>
     </swiper-container>
   </div>
 
-  <div class="about">
+  <app-about class="about" id="about"/>
 
-  </div>
-
-  <app-team class="team">
+  <app-team class="team" id="team">
   </app-team>
 
-  <app-footer class="footer"></app-footer>
+  <app-footer class="footer" id="footer"></app-footer>
 </main>
 <router-outlet />
