@@ -1,0 +1,23 @@
+<div class="carousel" role="region" aria-roledescription="carousel" aria-label="Project slides">
+  <div class="embla">
+    <div class="embla__viewport" #viewport>
+      <div class="embla__container">
+        <div class="embla__slide" *ngFor="let s of slides; let i = index">
+          <div class="slide-inner">
+            <img *ngIf="i===0" src="/assets/Bild1.png" alt="Maya" class="img">
+            <img *ngIf="i===1" src="/assets/Bild2.png" alt="Franz" class="img">
+            <img *ngIf="i===2" src="/assets/Bild3.png" alt="Felix" class="img">
+            <img *ngIf="i===3" src="/assets/Jamin.png" alt="Jamin" class="img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button aria-label="Previous slide" class="prev" (click)="prev()">◀</button>
+  <button aria-label="Next slide" class="next" (click)="next()">▶</button>
+
+  <div class="pagination" role="tablist" aria-label="Slide dots">
+    <button *ngFor="let s of slides; let i = index" role="tab" [attr.aria-selected]="selectedIndex===i" (click)="goTo(i)" [class.active]="selectedIndex===i"></button>
+  </div>
+</div>
