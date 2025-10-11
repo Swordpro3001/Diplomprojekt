@@ -1,9 +1,19 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .footer {
   background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
   color: white;
   width: 100%;
+  height: 100%;
   box-shadow: 0 -0.125rem 0.625rem rgba(0, 0, 0, 0.1);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-content {

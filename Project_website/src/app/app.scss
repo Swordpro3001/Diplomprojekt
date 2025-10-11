@@ -1,35 +1,22 @@
-.slider, .team{
-  width: 100%;
-  min-height: 100vh;
-  height: auto;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.about {
-  width: 100%;
-  min-height: 100vh;
-  height: auto;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.footer{
-  display: flex;
-  height: auto;
-  min-height: 25vh;
-  width: 100%;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.main{
+.main {
   display: flex;
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
+}
+
+.slider, .about, .team, .footer {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  min-height: auto;
 }
 

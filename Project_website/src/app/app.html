@@ -1,13 +1,20 @@
 <app-header></app-header>
 
 <main class="main">
-  <app-carousel class="slider" id="slider"></app-carousel>
+  <section class="slider" id="slider">
+    <app-carousel></app-carousel>
+  </section>
 
-  <app-about class="about" id="about"/>
+  <section class="about" id="about">
+    <app-about/>
+  </section>
 
-  <app-team class="team" id="team">
-  </app-team>
+  <section class="team" id="team">
+    <app-team></app-team>
+  </section>
 
-  <app-footer class="footer" id="footer"></app-footer>
+  <section class="footer" id="footer">
+    <app-footer></app-footer>
+  </section>
 </main>
 <router-outlet />

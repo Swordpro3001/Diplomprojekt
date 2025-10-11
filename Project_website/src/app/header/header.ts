@@ -25,16 +25,13 @@ export class Header {
     event.preventDefault();
     const element = document.querySelector(sectionId);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
       });
 
       this.closeMenu();
     }
-
   }
 }
