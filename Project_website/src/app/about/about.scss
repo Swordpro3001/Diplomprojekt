@@ -6,12 +6,15 @@
   min-height: 100vh;
   height: auto;
   width: 100%;
-  padding: 0;
+  padding: 3rem 0;
+  box-sizing: border-box;
 }
 
 .about-container {
-  max-width: 1400px;
+  max-width: 140rem;
   width: 100%;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
 }
 
 .about-title {
@@ -19,49 +22,48 @@
   font-size: 2.5rem;
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.25rem;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
 }
 
 .about-description {
   text-align: center;
   font-size: 1.1rem;
   color: #f0f0f0;
-  margin-bottom: 50px;
-  max-width: 800px;
+  margin-bottom: 3.125rem;
+  max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 .cards-container {
   display: flex;
-  gap: 30px;
+  gap: 1.875rem;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 .card {
   background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  padding: 30px 24px;
+  border-radius: 0.625rem;
+  padding: 1.875rem 1.5rem;
   flex: 1;
-  min-width: 250px;
-  max-width: 280px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  min-width: 15.625rem;
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   text-align: center;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.625rem);
+    box-shadow: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.3);
   }
 
   .card-icon {
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     animation: float 3s ease-in-out infinite;
   }
 
@@ -69,7 +71,7 @@
     font-size: 1.4rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
   }
 
   .card-text {
@@ -81,120 +83,39 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-0.625rem);
   }
 }
-
-// Responsive Breakpoints
-@media (max-width: 1000px) {
+@media (max-width: 62.5rem) {
   :host {
-    padding: 40px 15px;
+    padding: 3rem 1rem;
     height: auto;
   }
 
   .about-title {
     font-size: 2rem;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
   }
 
   .about-description {
     font-size: 1rem;
-    margin-bottom: 30px;
-    padding: 0 15px;
+    margin-bottom: 1.875rem;
+    padding: 0 0.9375rem;
   }
 
   .cards-container {
-    gap: 20px;
+    gap: 1.25rem;
     padding: 2rem 1rem;
   }
 
   .card {
     max-width: 100%;
-    min-width: 280px;
-    flex: 1 1 calc(50% - 20px);
+    min-width: 17.5rem;
+    flex: 1 1 calc(50% - 1.25rem);
   }
 }
 
-@media (max-width: 768px) {
-  :host {
-    padding: 30px 15px;
-    height: auto;
-  }
 
-  .about-title {
-    font-size: 1.75rem;
-  }
-
-  .about-description {
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-  }
-
-  .cards-container {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-  }
-
-  .card {
-    max-width: 70%;
-    width: 100%;
-    flex: 1 1 100%;
-
-    .card-icon {
-      font-size: 2.5rem;
-    }
-
-    .card-title {
-      font-size: 1.2rem;
-    }
-
-    .card-text {
-      font-size: 0.9rem;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  :host {
-    padding: 20px 10px;
-    height: auto;
-  }
-
-  .about-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  .about-description {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    padding: 0 10px;
-  }
-
-  .cards-container {
-    gap: 15px;
-  }
-
-  .card {
-    padding: 20px 16px;
-    border-radius: 12px;
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .card-title {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .card-text {
-      font-size: 0.85rem;
-    }
-  }
-}

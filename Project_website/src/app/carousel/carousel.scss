@@ -58,13 +58,13 @@
   border: none;
   padding: 0.4rem 0.6rem;
   border-radius: 9999px;
-  box-shadow: 0 6px 18px rgba(15,23,42,0.12);
+  box-shadow: 0 0.375rem 1.125rem rgba(15,23,42,0.12);
   cursor: pointer;
 }
 .prev { left: 1rem; }
 .next { right: 1rem; }
 
-.prev:focus, .next:focus { outline: 2px solid rgba(59,130,246,0.6); }
+.prev:focus, .next:focus { outline: 0.125rem solid rgba(59,130,246,0.6); }
 
 .pagination {
   position: absolute;
@@ -77,4 +77,4 @@
 .pagination button {
   width: 0.75rem; height:0.75rem; border-radius:9999px; border:none; background: rgba(255,255,255,0.6); cursor:pointer;
 }
-.pagination button.active, .pagination button[aria-selected="true"] { background: white; box-shadow: 0 4px 12px rgba(2,6,23,0.12); }
+.pagination button.active, .pagination button[aria-selected="true"] { background: white; box-shadow: 0 0.25rem 0.75rem rgba(2,6,23,0.12); }

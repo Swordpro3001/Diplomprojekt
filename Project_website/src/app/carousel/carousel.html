@@ -2,14 +2,24 @@
   <div class="embla">
     <div class="embla__viewport" #viewport>
       <div class="embla__container">
-        <div class="embla__slide" *ngFor="let s of slides; let i = index">
-          <div class="slide-inner">
-            <img *ngIf="i===0" src="/assets/Bild1.png" alt="Maya" class="img">
-            <img *ngIf="i===1" src="/assets/Bild2.png" alt="Franz" class="img">
-            <img *ngIf="i===2" src="/assets/Bild3.png" alt="Felix" class="img">
-            <img *ngIf="i===3" src="/assets/Jamin.png" alt="Jamin" class="img">
+        @for (s of slides; track $index) {
+          <div class="embla__slide">
+            <div class="slide-inner">
+              @if ($index === 0) {
+                <img src="/assets/Bild1.png" alt="Maya" class="img">
+              }
+              @if ($index === 1) {
+                <img src="/assets/Bild2.png" alt="Franz" class="img">
+              }
+              @if ($index === 2) {
+                <img src="/assets/Bild3.png" alt="Felix" class="img">
+              }
+              @if ($index === 3) {
+                <img src="/assets/Bild4.png" alt="Jamin" class="img">
+              }
+            </div>
           </div>
-        </div>
+        }
       </div>
     </div>
   </div>
@@ -18,6 +28,8 @@
   <button aria-label="Next slide" class="next" (click)="next()">▶</button>
 
   <div class="pagination" role="tablist" aria-label="Slide dots">
-    <button *ngFor="let s of slides; let i = index" role="tab" [attr.aria-selected]="selectedIndex===i" (click)="goTo(i)" [class.active]="selectedIndex===i"></button>
+    @for (s of slides; track $index) {
+      <button role="tab" [attr.aria-selected]="selectedIndex===$index" (click)="goTo($index)" [class.active]="selectedIndex===$index"></button>
+    }
   </div>
 </div>
