@@ -1,0 +1,313 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  padding: 3rem 0;
+  box-sizing: border-box;
+}
+
+.milestones-container {
+  max-width: 130rem;
+  width: 100%;
+  padding: 0 3rem;
+  box-sizing: border-box;
+}
+
+.milestones-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+.milestones-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  margin-bottom: 3.125rem;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+
+@media (min-width: 62.5rem) {
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0;
+    padding: 0 1rem;
+    position: relative;
+    min-height: 35rem;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    right: 3%;
+    height: 0.25rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0.125rem;
+    z-index: 1;
+  }
+
+  .milestone-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    /* Ungerade Nummern (1, 3, 5, 7, 9) - Text über der Linie */
+    &:nth-child(odd) {
+      justify-content: flex-end;
+      padding-bottom: 50%;
+
+      .milestone-content {
+        position: absolute;
+        top: 0;
+        left: -30%;
+        right: -30%;
+        bottom: calc(50% + 2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.75rem;
+        overflow: hidden;
+      }
+
+      .milestone-dot {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    /* Gerade Nummern (2, 4, 6, 8, 10) - Text unter der Linie */
+    &:nth-child(even) {
+      justify-content: flex-start;
+      padding-top: 50%;
+
+      .milestone-content {
+        position: absolute;
+        bottom: 0;
+        left: -30%;
+        right: -30%;
+        top: calc(50% + 2rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0.75rem;
+        overflow: hidden;
+      }
+
+      .milestone-dot {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .milestone-dot {
+    width: 3rem;
+    height: 3rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.15);
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .milestone-number {
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .milestone-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    &:hover {
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .milestone-date {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ff8cd7;
+    margin-bottom: 0.1rem;
+  }
+
+  .milestone-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.4rem;
+    line-height: 1;
+  }
+
+  .milestone-description {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1;
+    margin: 0;
+  }
+}
+
+
+
+@media (max-width: 62.5rem) {
+  .timeline {
+    position: relative;
+    padding: 2rem 0 2rem 3rem;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 0;
+    left: 2.5rem;
+    bottom: 0;
+    width: 0.25rem;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0.125rem;
+  }
+
+  .milestone-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .milestone-dot {
+    position: absolute;
+    left: -1.875rem;
+    width: 3rem;
+    height: 3rem;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .milestone-number {
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .milestone-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+    margin-left: 2rem;
+    flex: 1;
+  }
+
+  .milestone-date {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #f5576c;
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  .milestone-description {
+    font-size: 0.8125rem;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+/* Sehr kleine Bildschirme */
+@media (max-width: 30rem) {
+  .milestones-title {
+    font-size: 2rem;
+  }
+
+  .milestones-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .timeline {
+    padding: 1.5rem 0 1.5rem 2.5rem;
+  }
+
+  .milestone-dot {
+    width: 2.5rem;
+    height: 2.5rem;
+    left: -1.5625rem;
+  }
+
+  .milestone-number {
+    font-size: 1rem;
+  }
+
+  .milestone-content {
+    margin-left: 1.5rem;
+    padding: 1rem;
+  }
+
+  .milestone-title {
+    font-size: 0.9375rem;
+  }
+
+  .milestone-description {
+    font-size: 0.75rem;
+  }
+}

@@ -5,10 +5,11 @@ import { Footer } from "./footer/footer";
 import { Team } from "./team/team";
 import { Carousel } from './carousel/carousel';
 import { About } from "./about/about";
+import { Milestones } from "./milestones/milestones";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, Team, About, Carousel],
+  imports: [RouterOutlet, Header, Footer, Team, About, Carousel, Milestones],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

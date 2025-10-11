@@ -5,6 +5,15 @@ import { CommonModule } from '@angular/common';
 // so TypeScript won't fail if the package is not yet installed during editing.
 let EmblaCarousel: any;
 
+interface Slide {
+  image: string;
+  alt: string;
+  title: string;
+  description: string;
+  textPosition: 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+  textAlign: 'left' | 'center' | 'right';
+}
+
 @Component({
   selector: 'app-carousel',
   standalone: true,
@@ -13,7 +22,40 @@ let EmblaCarousel: any;
   styleUrls: ['./carousel.scss']
 })
 export class Carousel implements AfterViewInit, OnDestroy {
-  slides = [0, 1, 2, 3];
+  slides: Slide[] = [
+    {
+      image: '/assets/Bild1.png',
+      alt: 'Projektübersicht',
+      title: 'Willkommen bei unserem Projekt',
+      description: 'Entdecken Sie innovative Lösungen und kreative Ansätze',
+      textPosition: 'bottom-center',
+      textAlign: 'center'
+    },
+    {
+      image: '/assets/Bild2.png',
+      alt: 'Technologie',
+      title: 'Moderne Technologien',
+      description: 'Wir setzen auf die neuesten Web-Technologien',
+      textPosition: 'center-left',
+      textAlign: 'left'
+    },
+    {
+      image: '/assets/Bild3.png',
+      alt: 'Team',
+      title: 'Unser Team',
+      description: 'Zusammenarbeit und Innovation im Fokus',
+      textPosition: 'top-right',
+      textAlign: 'right'
+    },
+    {
+      image: '/assets/Bild4.png',
+      alt: 'Vision',
+      title: 'Unsere Vision',
+      description: 'Die Zukunft der digitalen Welt gestalten',
+      textPosition: 'center',
+      textAlign: 'center'
+    }
+  ];
 
   @ViewChild('viewport', { static: false }) viewport!: ElementRef<HTMLDivElement>;
 
