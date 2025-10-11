@@ -3,6 +3,8 @@
   min-height: 100vh;
   height: auto;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .about {
@@ -10,6 +12,8 @@
   min-height: 100vh;
   height: auto;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .footer{
@@ -18,6 +22,8 @@
   min-height: 25vh;
   width: 100%;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .main{
