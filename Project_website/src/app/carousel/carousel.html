@@ -24,7 +24,12 @@
 
   <div class="pagination" role="tablist" aria-label="Slide dots">
     @for (s of slides; track $index) {
-      <button role="tab" [attr.aria-selected]="selectedIndex===$index" (click)="goTo($index)" [class.active]="selectedIndex===$index"></button>
+      <button
+        role="tab"
+        [attr.aria-selected]="selectedIndex===$index"
+        (click)="goTo($index)"
+        [class.active]="selectedIndex===$index"
+      ></button>
     }
   </div>
 </div>

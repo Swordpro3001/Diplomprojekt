@@ -4,12 +4,15 @@
     Our journey from idea to implementation - the key stages of our project
   </p>
 
-  <div class="timeline">
+  <div class="timeline" #timelineContainer [style.--progress]="displayProgress + '%'">
     <div class="timeline-line"></div>
+    <div class="timeline-line-progress"></div>
 
     @for (milestone of milestones; track milestone.id) {
-      <div class="milestone-item" [class.even]="milestone.id % 2 === 0">
-        <div class="milestone-dot">
+      <div class="milestone-item"
+           [class.even]="milestone.id % 2 === 0"
+           [class.visible]="isMilestoneVisible(milestone.id)">
+        <div class="milestone-dot" [class.completed]="isMilestoneCompleted(milestone.id)">
           <span class="milestone-number">{{ milestone.id }}</span>
         </div>
         <div class="milestone-content">

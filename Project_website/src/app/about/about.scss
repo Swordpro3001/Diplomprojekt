@@ -17,6 +17,17 @@
   box-sizing: border-box;
 }
 
+.animate-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .about-title {
   text-align: center;
   font-size: 2.5rem;

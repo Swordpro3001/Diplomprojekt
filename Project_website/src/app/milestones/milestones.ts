@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface Milestone {
@@ -14,7 +14,112 @@ interface Milestone {
   templateUrl: './milestones.html',
   styleUrl: './milestones.scss'
 })
-export class Milestones {
+export class Milestones implements AfterViewInit, OnDestroy {
+  @ViewChild('timelineContainer', { static: false }) timelineContainer!: ElementRef;
+
+  // Anzahl der abgeschlossenen Meilensteine (z.B. die ersten 2 sind fertig)
+  completedMilestonesCount: number = 2;
+
+  // Aktueller animierter Fortschritt (startet bei 0)
+  animatedProgress: number = 0;
+
+  // Tracking für sichtbare Milestones (für gestaffelte Animation)
+  visibleMilestones: Set<number> = new Set();
+
+  // Ziel-Fortschritt in Prozent
+  get progressPercentage(): number {
+    return (this.completedMilestonesCount / this.milestones.length) * 100;
+  }
+
+  // Für die Animation sichtbar
+  get displayProgress(): number {
+    return this.animatedProgress;
+  }
+
+  // Prüft, ob ein Meilenstein abgeschlossen ist
+  isMilestoneCompleted(milestoneId: number): boolean {
+    return milestoneId <= this.completedMilestonesCount;
+  }
+
+  // Prüft, ob ein Meilenstein animiert werden soll
+  isMilestoneVisible(milestoneId: number): boolean {
+    return this.visibleMilestones.has(milestoneId);
+  }
+
+  private observer?: IntersectionObserver;
+
+  ngAfterViewInit(): void {
+    // Intersection Observer erstellen
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animation starten wenn Section sichtbar ist
+            this.animateProgress();
+            this.animateMilestones();
+          } else {
+            // Animation zurücksetzen wenn Section nicht sichtbar ist
+            this.resetAnimation();
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Triggert wenn 20% der Section sichtbar ist
+        rootMargin: '0px'
+      }
+    );
+
+    // Timeline beobachten
+    if (this.timelineContainer) {
+      this.observer.observe(this.timelineContainer.nativeElement);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  private animateProgress(): void {
+    const targetProgress = this.progressPercentage;
+    const duration = 1500; // 1.5 Sekunden
+    const startTime = performance.now();
+    const startProgress = 0;
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing-Funktion (ease-out)
+      const easeOutQuad = 1 - Math.pow(1 - progress, 3);
+      this.animatedProgress = startProgress + (targetProgress - startProgress) * easeOutQuad;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        this.animatedProgress = targetProgress;
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }
+
+  private animateMilestones(): void {
+    // Milestones nacheinander mit Verzögerung erscheinen lassen
+    this.milestones.forEach((milestone, index) => {
+      setTimeout(() => {
+        this.visibleMilestones.add(milestone.id);
+      }, index * 100); // 100ms Verzögerung zwischen jedem Milestone
+    });
+  }
+
+  private resetAnimation(): void {
+    // Animation zurücksetzen
+    this.animatedProgress = 0;
+    this.visibleMilestones.clear();
+  }
+
  milestones: Milestone[] = [
   {
     id: 1,

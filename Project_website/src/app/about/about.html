@@ -1,9 +1,9 @@
-<div class="about-container">
-  <h2 class="about-title">About the Project</h2>
-  <p class="about-description">
+<div class="about-container" #aboutContainer>
+  <h2 class="about-title animate-element" [class.visible]="isElementVisible(0)">About the Project</h2>
+  <p class="about-description animate-element" [class.visible]="isElementVisible(0)">
    Ai4Ads is a research project analyzing urban traffic data to detect and correct inconsistencies using machine learning. It combines scalable DevOps deployment, optimized data processing, and intelligent anomaly handling to support media planning and mobility insights.  </p>
   <div class="cards-container">
-    <div class="card">
+    <div class="card animate-element" [class.visible]="isElementVisible(1)">
       <div class="card-icon">🤖</div>
       <h3 class="card-title">Automated Deployment</h3>
       <p class="card-text">
@@ -11,7 +11,7 @@
       </p>
     </div>
 
-    <div class="card">
+    <div class="card animate-element" [class.visible]="isElementVisible(2)">
       <div class="card-icon">📊</div>
       <h3 class="card-title">Data Refinement</h3>
       <p class="card-text">
@@ -19,7 +19,7 @@
       </p>
     </div>
 
-    <div class="card">
+    <div class="card animate-element" [class.visible]="isElementVisible(3)">
       <div class="card-icon">🔍</div>
       <h3 class="card-title">Anomaly Detection</h3>
       <p class="card-text">
@@ -27,7 +27,7 @@
       </p>
     </div>
 
-    <div class="card">
+    <div class="card animate-element" [class.visible]="isElementVisible(4)">
       <div class="card-icon">🛠️</div>
       <h3 class="card-title">Anomaly Correction</h3>
       <p class="card-text">
