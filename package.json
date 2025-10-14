@@ -15,10 +15,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "ng build && ng serve",
     "test": "ng start"
   },
   "dependencies": {
     "@angular/cli": "^20.2.2",
-    "ng": "^0.0.0"
+    "ng": "^0.0.0",
+    "swiper": "^12.0.2"
   }
 }

@@ -1,0 +1,26 @@
+<div class="milestones-container">
+  <h2 class="milestones-title">Project Milestones</h2>
+  <p class="milestones-description">
+    Our journey from idea to implementation - the key stages of our project
+  </p>
+
+  <div class="timeline" #timelineContainer [style.--progress]="displayProgress + '%'">
+    <div class="timeline-line"></div>
+    <div class="timeline-line-progress"></div>
+
+    @for (milestone of milestones; track milestone.id) {
+      <div class="milestone-item"
+           [class.even]="milestone.id % 2 === 0"
+           [class.visible]="isMilestoneVisible(milestone.id)">
+        <div class="milestone-dot" [class.completed]="isMilestoneCompleted(milestone.id)">
+          <span class="milestone-number">{{ milestone.id }}</span>
+        </div>
+        <div class="milestone-content">
+          <div class="milestone-date">{{ milestone.date }}</div>
+          <h3 class="milestone-title">{{ milestone.title }}</h3>
+          <p class="milestone-description">{{ milestone.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

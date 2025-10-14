@@ -1,0 +1,49 @@
+<div class="wrapper" #teamWrapper>
+  <div class="about-section animate-element" [class.visible]="isElementVisible(0)">
+    <h1>About Us</h1>
+    <p class="lead">Welcome to <span class="highlight">Misty Showcase</span> – a student-led project developed at the <span class="italic">Technologisches Gewerbemuseum</span> (TGM), a Higher Technical College located in Vienna's 20th district.</p>
+  </div>
+
+  <div class="about-section">
+    <h2 class="animate-element" [class.visible]="isElementVisible(0)">Our Team</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="team-member animate-element" [class.visible]="isElementVisible(1)" id="bilder">
+          <img src="/assets/Maya.png" alt="Maya Marr" class="team-photo">
+          <div class="team-name">Maya Marr</div>
+          <div class="team-role">Data Scientist</div>
+          <div class="team-time">72h</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="team-member animate-element" [class.visible]="isElementVisible(2)">
+          <img src="/assets/Franz.png" alt="Franz Puerto" class="team-photo">
+          <div class="team-name">Franz Puerto</div>
+          <div class="team-role">Full-Stack Developer</div>
+          <div class="team-time">125h</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="team-member animate-element" [class.visible]="isElementVisible(3)">
+          <img src="/assets/Felix.png" alt="Felix Schmid" class="team-photo">
+          <div class="team-name">Felix Schmid</div>
+          <div class="team-role">Data Scientist</div>
+          <div class="team-time">88h</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="team-member animate-element" [class.visible]="isElementVisible(4)">
+          <img src="/assets/Jamin.png" alt="Benjamin Popescu" class="team-photo">
+          <div class="team-name">Benjamin Popescu</div>
+          <div class="team-role">Data Scientist</div>
+          <div class="team-time">48h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-section animate-element" [class.visible]="isElementVisible(5)">
+    <p>We are all students of class 4BHIT, and we've worked together on this project as part of our yearly ITP course (<span class="italic">IT-Technische Projekte</span>).</p>
+  </div>
+
+</div>
