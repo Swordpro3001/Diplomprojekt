@@ -283,12 +283,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(0.625rem);
-  border: 0.125rem solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(0.1rem);
   padding: 1rem 1.25rem;
   border-radius: 0.75rem;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
   color: white;
@@ -297,8 +295,6 @@
 
   &:hover {
     background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.4);
     border-color: rgba(255, 255, 255, 0.5);
   }
 

@@ -11,15 +11,15 @@ export class Team implements AfterViewInit, OnDestroy {
 
   visibleElements: Set<number> = new Set();
   private observer?: IntersectionObserver;
+  private hasAnimated = false;
 
   ngAfterViewInit(): void {
     this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !this.hasAnimated) {
+            this.hasAnimated = true;
             this.animateElements();
-          } else {
-            this.resetAnimation();
           }
         });
       },
@@ -57,9 +57,5 @@ export class Team implements AfterViewInit, OnDestroy {
 
     // Footer-Section am Ende
     setTimeout(() => this.visibleElements.add(5), 900);
-  }
-
-  private resetAnimation(): void {
-    this.visibleElements.clear();
   }
 }

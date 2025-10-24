@@ -24,7 +24,7 @@ interface Slide {
 export class Carousel implements AfterViewInit, OnDestroy {
   slides: Slide[] = [
     {
-      image: '/assets/Bild1.png',
+      image: 'assets/Bild1.png',
       alt: 'Projektübersicht',
       title: 'Willkommen bei unserem Projekt',
       description: 'Entdecken Sie innovative Lösungen und kreative Ansätze',
@@ -32,7 +32,7 @@ export class Carousel implements AfterViewInit, OnDestroy {
       textAlign: 'center'
     },
     {
-      image: '/assets/Bild2.png',
+      image: 'assets/Bild2.png',
       alt: 'Technologie',
       title: 'Moderne Technologien',
       description: 'Wir setzen auf die neuesten Web-Technologien',
@@ -40,7 +40,7 @@ export class Carousel implements AfterViewInit, OnDestroy {
       textAlign: 'left'
     },
     {
-      image: '/assets/Bild3.png',
+      image: 'assets/Bild3.png',
       alt: 'Team',
       title: 'Unser Team',
       description: 'Zusammenarbeit und Innovation im Fokus',
@@ -48,7 +48,7 @@ export class Carousel implements AfterViewInit, OnDestroy {
       textAlign: 'right'
     },
     {
-      image: '/assets/Bild4.png',
+      image: 'assets/Bild4.png',
       alt: 'Vision',
       title: 'Unsere Vision',
       description: 'Die Zukunft der digitalen Welt gestalten',

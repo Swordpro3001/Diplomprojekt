@@ -2,7 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(
+  45deg,
+  #340040 40%,
+  #0b0963 100%
+);
+
+
   min-height: 100vh;
   height: auto;
   width: 100%;

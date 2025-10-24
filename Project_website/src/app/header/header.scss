@@ -22,6 +22,14 @@
   &__logo {
     cursor: pointer;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+
+    .logoText {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-left: 1rem;
+    }
   }
 
   &__hamburger {

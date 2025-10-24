@@ -2,7 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(
+  135deg,
+  #340040 40%,
+  #0b0963 100%
+);
   min-height: 100vh;
   height: auto;
   width: 100%;
@@ -180,7 +184,7 @@
   .milestone-number {
     font-size: 1.25rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #2f043d 0%, #2e043e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -206,14 +210,14 @@
   .milestone-date {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #ff8cd7;
+    color:#4d1264;
     margin-bottom: 0.1rem;
   }
 
   .milestone-title {
     font-size: 0.9rem;
     font-weight: 700;
-    color: #333;
+    color:#333;
     margin-bottom: 0.4rem;
     line-height: 1;
   }
@@ -308,7 +312,7 @@
   .milestone-number {
     font-size: 1.25rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #2f043d 0%, #be2bf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -326,7 +330,7 @@
   .milestone-date {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #f5576c;
+    color:#4d1264;
     margin-bottom: 0.5rem;
   }
 

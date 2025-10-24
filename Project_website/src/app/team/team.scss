@@ -4,7 +4,12 @@
   min-height: 100vh;
   height: auto;
   box-sizing: border-box;
-  background: #ffffff;
+  background: linear-gradient(
+    45deg,
+    #340040 40%,
+    #0b0963 100%
+  );
+  color: #ffffff ;
 }
 
 .about-container {
@@ -72,7 +77,6 @@
 }
 
 .team-role {
-  color: #6c757d;
   font-size: 0.9rem;
 }
 
@@ -82,7 +86,7 @@
 
 .highlight {
   font-weight: 700;
-  color: #0d6efd;
+  color: #78aeff;
 }
 
 .italic {
