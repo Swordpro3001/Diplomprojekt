@@ -1,0 +1,47 @@
+name: Angular CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    name: Build Angular App
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+          working-directory: Project_website
+
+    steps:
+      # 1️⃣ Repository auschecken
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Node.js installieren (passende Version angeben)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  # oder 18, je nach deinem Projekt
+          cache: 'npm'      # optional: cached automatisch node_modules
+
+      # 3️⃣ Abhängigkeiten installieren (robust)
+      - name: Clean install dependencies
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm ci || (echo "npm ci failed, retrying with npm install..." && rm -rf node_modules package-lock.json && npm install)
+
+
+      # 4️⃣ Angular CLI installieren (falls nicht lokal vorhanden)
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      # 5️⃣ Build der Angular-App
+      - name: Build Angular app
+        run: ng build --configuration production
+
+      # 6️⃣ (Optional) Tests ausführen
+      - name: Run tests
+        run: ng test --watch=false --browsers=ChromeHeadless
