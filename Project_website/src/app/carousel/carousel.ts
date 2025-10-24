@@ -21,39 +21,32 @@ interface Slide {
   templateUrl: './carousel.html',
   styleUrls: ['./carousel.scss']
 })
+
 export class Carousel implements AfterViewInit, OnDestroy {
   slides: Slide[] = [
     {
       image: '/assets/Bild1.png',
       alt: 'Projektübersicht',
-      title: 'Willkommen bei unserem Projekt',
-      description: 'Entdecken Sie innovative Lösungen und kreative Ansätze',
+      title: 'Welcome to our project AI4Ads!',
+      description: 'Algorithm to detect and correct anomalies in a frequency landscape',
       textPosition: 'bottom-center',
       textAlign: 'center'
     },
     {
       image: '/assets/Bild2.png',
-      alt: 'Technologie',
-      title: 'Moderne Technologien',
-      description: 'Wir setzen auf die neuesten Web-Technologien',
+      alt: 'Frequency Landscape',
+      title: 'Frequency Landscape',
+      description: 'The frequency landscape is made up of traffic data',
       textPosition: 'center-left',
       textAlign: 'left'
     },
     {
       image: '/assets/Bild3.png',
-      alt: 'Team',
-      title: 'Unser Team',
-      description: 'Zusammenarbeit und Innovation im Fokus',
+      alt: 'Our partner',
+      title: 'Our partner',
+      description: 'We are working together with R+C',
       textPosition: 'top-right',
       textAlign: 'right'
-    },
-    {
-      image: '/assets/Bild4.png',
-      alt: 'Vision',
-      title: 'Unsere Vision',
-      description: 'Die Zukunft der digitalen Welt gestalten',
-      textPosition: 'center',
-      textAlign: 'center'
     }
   ];
 
