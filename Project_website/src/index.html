@@ -6,10 +6,26 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <!-- Preload first carousel image for faster initial render -->
+
+  <link rel="preload" as="image" href="assets/logo.webp" type="image/webp">
   <link rel="preload" as="image" href="assets/Bild1.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/Bild2.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/Bild3.webp" type="image/webp">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader-container">
+      <img src="assets/logo.webp" alt="AI4Ads Logo" class="loader-image">
+      <div class="loader-logo">AI4Ads</div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="loading-percentage" id="loading-percentage">0%</div>
+      <div class="loading-text">Loading resources...</div>
+    </div>
+  </div>
+
   <app-root></app-root>
 </body>
 </html>
