@@ -3,20 +3,26 @@
      [threshold]="0.15"
      [animateOnce]="true"
      (elementVisible)="onElementVisible()">
+
   <div class="about-section animate-element" [class.visible]="isElementVisible(0)">
-    <h1>About Us</h1>
-    <p class="lead">Welcome to <span class="highlight">AI4Ads</span> – a student-led project developed at the <span class="italic">Technologisches Gewerbemuseum</span> (TGM), a Higher Technical College located in Vienna's 20th district.</p>
+    <h1>Meet the Team</h1>
+    <p class="lead">
+      <span class="highlight">AI4Ads</span> is a student project at the <span class="italic">Technologisches Gewerbemuseum</span> (TGM) in Vienna. We use AI and data science to improve urban mobility and media planning. Our team combines expertise in data science, DevOps, and project management for innovative solutions.
+    </p>
+    <h2 class="animate-element" [class.visible]="isElementVisible(0)">Who We Are</h2>
+    <p class="about-description animate-element" [class.visible]="isElementVisible(0)">
+      We are students from class 5BHIT, working together on data analysis, AI model development, and scalable deployment to solve real-world challenges.
+    </p>
   </div>
 
   <div class="about-section">
-    <h2 class="animate-element" [class.visible]="isElementVisible(0)">Our Team</h2>
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <div class="team-member animate-element" [class.visible]="isElementVisible(1)" id="bilder">
           <img src="assets/Maya.webp" alt="Maya Marr" class="team-photo" loading="lazy">
           <div class="team-name">Maya Marr</div>
           <div class="team-role">Data Scientist</div>
-          <!--<div class="team-time">72h</div>-->
+          <div class="team-desc">Algorithmic detection of incorrect information in traffic data.</div>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -24,15 +30,15 @@
           <img src="assets/Jamin.webp" alt="Benjamin Popescu" class="team-photo" loading="lazy">
           <div class="team-name">Benjamin Popescu</div>
           <div class="team-role">Data Scientist</div>
-          <!--<div class="team-time">48h</div>-->
+          <div class="team-desc">Correction of faulty data using machine learning.</div>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="team-member animate-element" [class.visible]="isElementVisible(3)">
           <img src="assets/Franz.webp" alt="Franz Puerto" class="team-photo" loading="lazy">
           <div class="team-name">Franz Puerto</div>
-          <div class="team-role">DevOps/Teamleader</div>
-          <!--<div class="team-time">125h</div>-->
+          <div class="team-role">DevOps / Team Leader</div>
+          <div class="team-desc">Automated deployment and scaling of an AI model.</div>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -40,14 +46,15 @@
           <img src="assets/Felix.webp" alt="Felix Schmid" class="team-photo" loading="lazy">
           <div class="team-name">Felix Schmid</div>
           <div class="team-role">Data Scientist</div>
-          <!--<div class="team-time">88h</div>-->
+          <div class="team-desc">Preparation of source data and identification of additional traffic data.</div>
         </div>
       </div>
     </div>
-  </div>
 
   <div class="about-section animate-element" [class.visible]="isElementVisible(5)">
-    <p>We are all students of class 4BHIT, and we've worked together on this project as part of our yearly ITP course (<span class="italic">IT-Technische Projekte</span>).</p>
+    <p>
+      This project was realized as part of our diploma thesis, where creativity and technical skills were essential. We are proud to present our results and hope to inspire others to explore the potential of AI in everyday life.
+    </p>
   </div>
 
 </div>
