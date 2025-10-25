@@ -24,7 +24,7 @@ interface Slide {
 export class Carousel implements AfterViewInit, OnDestroy {
   slides: Slide[] = [
       {
-        image: '/assets/Bild1.png',
+        image: 'assets/Bild1.webp',
         alt: 'Project Overview',
         title: 'Welcome to our project AI4Ads!',
         description: 'AI4Ads is a research project analyzing urban traffic data to detect and correct inconsistencies using machine learning. It combines scalable DevOps deployment, optimized data processing, and intelligent anomaly handling to support media planning and mobility insights.',
@@ -32,7 +32,7 @@ export class Carousel implements AfterViewInit, OnDestroy {
         textAlign: 'center'
       },
       {
-        image: '/assets/Bild2.png',
+        image: 'assets/Bild2.webp',
         alt: 'Frequency Landscape',
         title: 'Frequency Landscape',
         description: 'Our curated dataset merges backups and external sources, reduced to essential features for optimal machine learning performance and enhanced consistency. This enables reliable detection and correction of anomalies in traffic frequency across segments.',
@@ -40,7 +40,7 @@ export class Carousel implements AfterViewInit, OnDestroy {
         textAlign: 'left'
       },
       {
-        image: '/assets/Bild3.png',
+        image: 'assets/Bild3.webp',
         alt: 'Our partner',
         title: 'Our partner',
         description: 'We work together with R+C Plakatforschung, a leading company in outdoor advertising solutions. Our AI identifies inconsistencies in traffic data, factoring in POIs like hospitals, malls, and parking areas to improve detection accuracy.<br> <a href="https://outdoorserver.at/" target="_blank" rel="noopener">Learn more</a>',
