@@ -23,39 +23,31 @@ interface Slide {
 })
 export class Carousel implements AfterViewInit, OnDestroy {
   slides: Slide[] = [
-    {
-      image: 'assets/Bild1.png',
-      alt: 'Projektübersicht',
-      title: 'Willkommen bei unserem Projekt',
-      description: 'Entdecken Sie innovative Lösungen und kreative Ansätze',
-      textPosition: 'bottom-center',
-      textAlign: 'center'
-    },
-    {
-      image: 'assets/Bild2.png',
-      alt: 'Technologie',
-      title: 'Moderne Technologien',
-      description: 'Wir setzen auf die neuesten Web-Technologien',
-      textPosition: 'center-left',
-      textAlign: 'left'
-    },
-    {
-      image: 'assets/Bild3.png',
-      alt: 'Team',
-      title: 'Unser Team',
-      description: 'Zusammenarbeit und Innovation im Fokus',
-      textPosition: 'top-right',
-      textAlign: 'right'
-    },
-    {
-      image: 'assets/Bild4.png',
-      alt: 'Vision',
-      title: 'Unsere Vision',
-      description: 'Die Zukunft der digitalen Welt gestalten',
-      textPosition: 'center',
-      textAlign: 'center'
-    }
-  ];
+      {
+        image: '/assets/Bild1.png',
+        alt: 'Project Overview',
+        title: 'Welcome to our project AI4Ads!',
+        description: 'AI4Ads is a research project analyzing urban traffic data to detect and correct inconsistencies using machine learning. It combines scalable DevOps deployment, optimized data processing, and intelligent anomaly handling to support media planning and mobility insights.',
+        textPosition: 'bottom-center',
+        textAlign: 'center'
+      },
+      {
+        image: '/assets/Bild2.png',
+        alt: 'Frequency Landscape',
+        title: 'Frequency Landscape',
+        description: 'Our curated dataset merges backups and external sources, reduced to essential features for optimal machine learning performance and enhanced consistency. This enables reliable detection and correction of anomalies in traffic frequency across segments.',
+        textPosition: 'center-left',
+        textAlign: 'left'
+      },
+      {
+        image: '/assets/Bild3.png',
+        alt: 'Our partner',
+        title: 'Our partner',
+        description: 'We work together with R+C Plakatforschung, a leading company in outdoor advertising solutions. Our AI identifies inconsistencies in traffic data, factoring in POIs like hospitals, malls, and parking areas to improve detection accuracy.<br> <a href="https://outdoorserver.at/" target="_blank" rel="noopener">Learn more</a>',
+        textPosition: 'top-right',
+        textAlign: 'right'
+      }
+    ];
 
   @ViewChild('viewport', { static: false }) viewport!: ElementRef<HTMLDivElement>;
 

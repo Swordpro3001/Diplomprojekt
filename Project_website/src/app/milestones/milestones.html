@@ -4,14 +4,19 @@
     Our journey from idea to implementation - the key stages of our project
   </p>
 
-  <div class="timeline" #timelineContainer [style.--progress]="displayProgress + '%'">
+  <div class="timeline"
+       appScrollAnimation
+       [threshold]="0.2"
+       [animateOnce]="true"
+       (elementVisible)="onElementVisible()"
+       [style.--progress]="displayProgress + '%'">
     <div class="timeline-line"></div>
     <div class="timeline-line-progress"></div>
 
     @for (milestone of milestones; track milestone.id) {
       <div class="milestone-item"
            [class.even]="milestone.id % 2 === 0"
-           [class.visible]="isMilestoneVisible(milestone.id)">
+           [class.visible]="isElementVisible(milestone.id)">
         <div class="milestone-dot" [class.completed]="isMilestoneCompleted(milestone.id)">
           <span class="milestone-number">{{ milestone.id }}</span>
         </div>

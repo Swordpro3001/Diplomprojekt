@@ -1,47 +1,21 @@
-import { Component, AfterViewInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
+import { ScrollAnimationDirective } from '../directives/scroll-animation.directive';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  imports: [ScrollAnimationDirective],
   templateUrl: './about.html',
   styleUrl: './about.scss'
 })
-export class About implements AfterViewInit, OnDestroy {
-  @ViewChild('aboutContainer', { static: false }) aboutContainer!: ElementRef;
-
+export class About {
   visibleElements: Set<number> = new Set();
-  private observer?: IntersectionObserver;
-  private hasAnimated = false;
-
-  ngAfterViewInit(): void {
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !this.hasAnimated) {
-            this.hasAnimated = true;
-            this.animateElements();
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-        rootMargin: '0px'
-      }
-    );
-
-    if (this.aboutContainer) {
-      this.observer.observe(this.aboutContainer.nativeElement);
-    }
-  }
-
-  ngOnDestroy(): void {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
-  }
 
   isElementVisible(index: number): boolean {
     return this.visibleElements.has(index);
+  }
+
+  onElementVisible(): void {
+    this.animateElements();
   }
 
   private animateElements(): void {

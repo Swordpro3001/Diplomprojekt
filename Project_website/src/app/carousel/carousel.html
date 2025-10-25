@@ -9,7 +9,7 @@
               <div class="slide-overlay" [class]="'position-' + slide.textPosition">
                 <div class="slide-content" [class]="'align-' + slide.textAlign">
                   <h2 class="slide-title">{{ slide.title }}</h2>
-                  <p class="slide-description">{{ slide.description }}</p>
+                  <p class="slide-description" [innerHTML]="slide.description"></p>
                 </div>
               </div>
             </div>

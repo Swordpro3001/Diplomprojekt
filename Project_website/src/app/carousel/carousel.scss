@@ -156,7 +156,7 @@
   max-width: 50rem;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(1rem);
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: 0.625rem;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3), 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
   border: 0.0625rem solid rgba(255, 255, 255, 0.5);
@@ -167,7 +167,6 @@
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4), 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
   }
 
-  /* Text Alignment */
   &.align-left {
     text-align: left;
   }
@@ -182,7 +181,7 @@
 }
 
 .slide-title {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: #1f2937;
   margin: 0 0 1rem 0;
@@ -190,7 +189,7 @@
 }
 
 .slide-description {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #4b5563;
   line-height: 1.6;
   margin: 0;
