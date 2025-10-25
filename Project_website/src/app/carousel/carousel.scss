@@ -95,7 +95,7 @@
     bottom: auto;
     justify-content: flex-end;
     align-items: flex-start;
-    padding-right: 6rem;
+    padding-right: 5vw;
   }
 
   &.position-center-left {
@@ -106,7 +106,7 @@
     transform: translateY(-50%);
     justify-content: flex-start;
     align-items: center;
-    padding-left: 6rem;
+    padding-left: 10vw;
   }
 
   &.position-center {
@@ -148,25 +148,20 @@
     top: auto;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 6rem; /* Platz für next Button */
+    padding-right: 3vw;
     padding-bottom: 5rem;
   }
 }
 
 .slide-content {
-  max-width: 50rem;
+  max-width: 65vw;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(1rem);
-  padding: 2rem;
+  padding: 1.75rem;
   border-radius: 0.625rem;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3), 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
   border: 0.0625rem solid rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4), 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
-  }
 
   &.align-left {
     text-align: left;
@@ -293,22 +288,17 @@
   font-size: 1.25rem;
   z-index: 20;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
   &:active {
     transform: translateY(-50%) scale(0.95);
   }
 }
 
 .prev {
-  left: 2rem;
+  left: 2vw;
 }
 
 .next {
-  right: 2rem;
+  right: 2vw;
 }
 
 .prev:focus, .next:focus {
@@ -342,11 +332,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
-
-  &:hover {
-    transform: scale(1.2);
-    border-color: white;
-  }
 
   &.active,
   &[aria-selected="true"] {
